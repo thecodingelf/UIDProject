@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Job Radar App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3-theme-teal.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+  <script src=""></script>
+
+  <script>
+
+
+
+  </script>
+
+  <style>
+
+.button-one{
+  margin-top: 15%;
+}
+
+.w3-btn, .w3-btn-block{
+  padding:12px 16px;
+}
+
+footer{
+  height:74.29px;
+}
+
+  </style>
+
+</head>
+
+<body style="max-width:600px">
+
+  <nav class="w3-sidenav w3-card-2 w3-white" id="mySidenav" style="width:35%; height:200px; display:none;">
+    <div class="w3-container w3-theme-d2">
+      <span onclick="w3_close()" class="w3-closenav w3-right w3-xlarge">X</span>
+      <br>
+      <div class="w3-padding w3-center">
+        <img class="w3-circle" src="" alt="avatar" style="width:75%">
+      </div>
+    </div>
+    <br>
+    <a class="w3-center" href="#">Profile</a>
+    <hr>
+    <a class="w3-center" href="#">Log Out</a>
+    <hr>
+  </nav>
+
+  <header class="w3-container w3-card-4 w3-theme">
+    <h1>
+      Job Radar App
+      <i class="w3-opennav fa fa-bars" onclick="w3_open()"></i>
+    </h1>
+  </header>
+
+  <div class="w3-container" onclick="w3_close()">
+
+    <div class="w3-row">
+      <div class="w3-col s3">
+
+      </div>
+      <div class="w3-col l9 w3-container">
+
+      <button class="w3-btn-block w3-teal button-one" ng-click="">Add Work</button>
+
+      </div>
+    </div>
+    <hr>
+
+    <div id="box_second" class="w3-row">
+      <div class="w3-col s3">
+      </div>
+      <div class="w3-col l9 w3-container">
+
+        <button class="w3-btn-block w3-teal">Check Work</button>
+
+      </div>
+    </div>
+    <hr>
+    <div id="third" class="w3-row">
+      <div class="w3-col s3">
+
+      </div>
+      <div class="w3-col l9 w3-container">
+
+        <button class="w3-btn-block w3-teal">Maps</button>
+
+      </div>
+
+
+    </div>
+    <hr>
+  </div>
+
+  <footer class="w3-container w3-theme w3-margin-top">
+
+  </footer>
+
+  <script>
+  function w3_open() {
+    document.getElementById("mySidenav").style.display = "block";
+  }
+  function w3_close() {
+    document.getElementById("mySidenav").style.display = "none";
+  }
+  </script>
+
+</body>
