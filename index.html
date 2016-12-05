@@ -6,52 +6,33 @@
   <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
   <link rel="stylesheet" href="http://www.w3schools.com/lib/w3-theme-teal.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="Main.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
-  <script src=""></script>
-  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
-  <script>
-
-
-
-  </script>
-
-  <style>
-
-.button-one{
-  margin-top: 15%;
-}
-
-.w3-btn, .w3-btn-block{
-  padding:12px 16px;
-}
-
-footer{
-  height:74.29px;
-}
-
-  </style>
+  <script src="addwork.js"></script>
 
 </head>
 
 <body style="max-width:600px">
-<div data-role="page" id="index">
+
   <nav class="w3-sidenav w3-card-2 w3-white" id="mySidenav" style="width:35%; height:200px; display:none;">
     <div class="w3-container w3-theme-d2">
       <span onclick="w3_close()" class="w3-closenav w3-right w3-xlarge">X</span>
       <br>
       <div class="w3-padding w3-center">
-        <img class="w3-circle" src="" alt="avatar" style="width:75%">
+
+        <!-- <img class="w3-circle" src="pic.jpg" alt="avatar" style="width:85%"> -->
+        <i class="w3-opennav fa fa-user-circle fa-3x"></i>
+
       </div>
     </div>
     <br>
-    <a class="w3-center" href="#">Profile</a>
+    <!-- <a class="w3-center" href="#">Profile</a> -->
+    <!-- <hr> -->
+    <a onclick="document.getElementById('id01').style.display='block'" class="w3-center" >Log In</a>
     <hr>
-    <a class="w3-center" href="#">Log Out</a>
+    <a onclick="document.getElementById('id02').style.display='block'" class="w3-center" >Sign In</a>
     <hr>
   </nav>
 
@@ -64,14 +45,80 @@ footer{
 
   <div class="w3-container" onclick="w3_close()">
 
+    <!-- Log in in form. -->
+
+    <div id="id01" class="w3-modal">
+      <div class="w3-modal-content w3-card-8 w3-animate-zoom" style="max-width:600px">
+
+        <div class="w3-center"><br>
+          <span onclick="document.getElementById('id01').style.display='none'" class="w3-closebtn w3-hover-red w3-container w3-padding-8 w3-display-topright" title="Close Modal">×</span>
+        </div>
+
+        <form class="w3-container" action="form.asp">
+
+          <div class="w3-section">
+            <label><b>Username</b></label>
+            <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usrname" required>
+            <label><b>Password</b></label>
+            <input class="w3-input w3-border" type="text" placeholder="Enter Password" name="psw" required>
+            <button class="w3-btn-block w3-green w3-section w3-padding" type="submit">Login</button>
+            <input class="w3-check w3-margin-top" type="checkbox" checked="checked"> Remember me
+          </div>
+
+        </form>
+
+        <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+
+          <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-btn w3-red">Cancel</button>
+          <span class="w3-right w3-padding w3-hide-small">Forgot <a href="#">password?</a></span>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Sign in form. -->
+
+    <div id="id02" class="w3-modal">
+      <div class="w3-modal-content w3-card-8 w3-animate-zoom" style="max-width:600px">
+
+        <div class="w3-center"><br>
+          <span onclick="document.getElementById('id02').style.display='none'" class="w3-closebtn w3-hover-red w3-container w3-padding-8 w3-display-topright" title="Close Modal">×</span>
+        </div>
+
+        <form class="w3-container" action="form.asp">
+
+          <div class="w3-section">
+            <label><b>Username</b></label>
+            <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usrname" required>
+            <label><b>Password</b></label>
+            <input class="w3-input w3-border" type="text" placeholder="Enter Password" name="psw" required>
+            <label><b>Email Address</b></label>
+            <input class="w3-input w3-border" type="text" placeholder="Enter Email" name="Email" required>
+            <button class="w3-btn-block w3-green w3-section w3-padding" type="submit">Register</button>
+          </div>
+
+        </form>
+
+        <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+
+          <button onclick="document.getElementById('id02').style.display='none'" type="button" class="w3-btn w3-red">Cancel</button>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Main Screen Area -->
+
     <div class="w3-row">
       <div class="w3-col s3">
 
       </div>
       <div class="w3-col l9 w3-container">
-      <div data-role="main" class="">
-      <button class="w3-btn-block w3-teal button-one" ng-click=""><a href="#addwork" data-transition="slide" style="text-decoration: none; color: white;">Add Work</a></button>
-</div>
+
+        <button onclick="location.href='addwork.html';" class="w3-btn-block w3-teal button-one">Add Work</button>
+
       </div>
     </div>
     <hr>
@@ -81,7 +128,7 @@ footer{
       </div>
       <div class="w3-col l9 w3-container">
 
-        <button class="w3-btn-block w3-teal">Check Work</button>
+        <button class="btn btn-block w3-teal">Check Work</button>
 
       </div>
     </div>
@@ -100,94 +147,13 @@ footer{
     </div>
     <hr>
   </div>
-</div>
+
+  <!-- Footer section -->
+
   <footer class="w3-container w3-theme w3-margin-top">
 
   </footer>
-<div data-role="page" id="addwork">
- <nav class="w3-sidenav w3-card-2 w3-white" id="mySidenav" style="width:35%; height:100px; display:none;">
-    <div class="w3-container w3-theme-d2">
-      <span onclick="w3_close()" class="w3-closenav w3-right w3-xlarge">X</span>
-      <br>
-      <div class="w3-padding w3-center">
-        <img class="w3-circle" src="" alt="avatar" style="width:75%">
-      </div>
-    </div>
-    <br>
-    <a class="w3-center" href="#">Profile</a>
-    <hr>
-    <a class="w3-center" href="#">Log Out</a>
-    <hr>
-  </nav>
 
-  <header class="w3-container w3-card-4 w3-theme">
-    <h1>
-      Job Radar App
-      <i class="w3-opennav fa fa-bars" onclick="w3_open()"></i>
-    </h1>
-  </header>
-
-  <div class="w3-container" onclick="w3_close()">
-
-    <div class="w3-row">
-      <div class="w3-col s3">
-
-      </div>
-      <div class="w3-col l9 w3-container">
-
-        <form action="" class="w3-container w3-card-4 w3-light-grey w3-text-teal w3-margin card-padding">
-          <h2 class="w3-center">Contact Us</h2>
-
-          <div class="w3-row w3-section">
-            <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-briefcase"></i></div>
-            <div class="w3-rest">
-              <input class="w3-input w3-border" name="work" type="text" placeholder="Name Of The Work">
-            </div>
-          </div>
-
-          <div class="w3-row w3-section">
-            <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-map-marker"></i></div>
-            <div class="w3-rest">
-              <input class="w3-input w3-border" name="place" type="text" placeholder="Name Of The Place">
-            </div>
-          </div>
-
-          <div class="w3-row w3-section">
-            <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-money"></i></div>
-            <div class="w3-rest">
-              <input class="w3-input w3-border" name="price" type="text" placeholder="Price">
-            </div>
-          </div>
-
-          <div class="w3-row w3-section">
-            <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-phone"></i></div>
-            <div class="w3-rest">
-              <input class="w3-input w3-border" name="phone" type="text" placeholder="Phone">
-            </div>
-          </div>
-
-          <div class="w3-row w3-section">
-            <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-pencil"></i></div>
-            <div class="w3-rest">
-              <input class="w3-input w3-border" name="details" type="text" placeholder="Work Description">
-            </div>
-          </div>
-
-          <button class="w3-btn-block w3-section w3-teal w3-ripple w3-padding">Submit Work</button>
-
-        </form>
-
-      </div>
-    </div>
-
-  </div>
-
-</div>
-
-<footer class="w3-container w3-theme w3-margin-top">
-
-</footer>
-</div>
   <script>
   function w3_open() {
     document.getElementById("mySidenav").style.display = "block";

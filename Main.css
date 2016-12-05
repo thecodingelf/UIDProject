@@ -1,0 +1,42 @@
+.btn, .btn-block{
+  border:none;
+  display:inline-block;
+  outline:0;
+  padding:6px 16px;
+  vertical-align:middle;
+  overflow:hidden;
+  text-decoration:none!important;
+  color:#fff;
+  background-color:#000;
+  text-align:center;
+  cursor:pointer;
+  white-space:nowrap
+}
+
+.btn, .btn-block{
+  padding:12px 16px;
+}
+
+.btn-block{
+  width: 100%;
+}
+
+.btn-block:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button-one{
+  margin-top: 15%;
+}
+
+.w3-btn, .w3-btn-block{
+  padding:12px 16px;
+}
+
+.w3-btn-block:hover{
+  background-color: red;
+}
+
+footer{
+  height:74.29px;
+}
