@@ -13,7 +13,6 @@
   <script src="app.js"></script>
   <script src="controllers.js"></script>
 
-
 </head>
 
 <style>
@@ -156,11 +155,25 @@
         </div>
 
       </div>
+      <button onClick="myMap()" class="w3-btn-block w3-teal">Map +</button>
+
+<div id="map" style="width:100%;height:200px;"></div>
 
     </div>
+
   </div>
 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC44J3RMPsuu5U-6X7uHrw3MYRg2CyGFgU&callback=myMap"></script>
 
+  <script>
+function myMap() {
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {
+    center: new google.maps.LatLng(65.011003, 25.469006), zoom: 15
+  };
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+}
+</script>
 
   <script>
   function w3_open() {
