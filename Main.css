@@ -13,6 +13,31 @@
   white-space:nowrap
 }
 
+.w3-opennav{
+  margin-top: 12px;
+  transition: height 4s
+}
+
+.box{
+  margin-top: 20px;
+}
+
+.barmenu{
+  float:right;
+}
+
+#mySidenav{
+  width: 30%;
+  height: 250px;
+  display: block;
+  margin-top: 75px;
+
+}
+
+#barnav{
+
+}
+
 .btn, .btn-block{
   padding:12px 16px;
 }
