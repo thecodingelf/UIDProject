@@ -12,6 +12,8 @@
   <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
   <script src="app.js"></script>
   <script src="controllers.js"></script>
+  <script src="map.js"></script>
+  <script src="main.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC44J3RMPsuu5U-6X7uHrw3MYRg2CyGFgU"></script>
 
 </head>
@@ -56,7 +58,7 @@
       <div class="w3-right">
         <i class="fa fa-volume-up"></i>
         <i class="fa fa-wifi"></i>
-        <i class="fa fa-battery-2"></i>
+        <i id="chargedbattery" class="fa"></i>
         19:00
       </div>
     </div>
@@ -190,44 +192,32 @@
   </div>
 
   <script>
-  function myFunction(id) {
+  // Handles the battery animation.
 
-    var x = document.getElementById(id);
+  function chargebattery() {
 
-    if (x.className.indexOf("w3-show") == -1) {
+  var a;
 
-      x.className += " w3-show";
-    }
-    else {
+  a = document.getElementById("chargedbattery");
 
-      x.className = x.className.replace(" w3-show", "");
-    }
+  a.innerHTML = "&#xf244;";
+
+  setTimeout(function () {
+      a.innerHTML = "&#xf243;";
+    }, 1000);
+  setTimeout(function () {
+      a.innerHTML = "&#xf242;";
+    }, 2000);
+  setTimeout(function () {
+      a.innerHTML = "&#xf241;";
+    }, 3000);
+  setTimeout(function () {
+      a.innerHTML = "&#xf240;";
+    }, 4000);
   }
-  </script>
+  chargebattery();
+  setInterval(chargebattery, 5000);
 
-  <script>
-  function myMap() {
-    var mapCanvas = document.getElementById("map");
-    var mapOptions = {
-      center: new google.maps.LatLng(65.011003, 25.469006), zoom: 15
-    };
-    var map = new google.maps.Map(mapCanvas, mapOptions);
-
-
-  }
-  </script>
-
-  <script>
-  function w3_open() {
-
-    document.getElementById("mySidenav").style.display = "block";
-    document.getElementById("mySidenav").style.right = "0";
-  }
-
-  function w3_close() {
-
-    document.getElementById("mySidenav").style.display = "none";
-  }
   </script>
 
 </body>
