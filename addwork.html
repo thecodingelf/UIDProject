@@ -11,32 +11,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
   <script src="addwork.js"></script>
-
-  <style>
-
-  .w3-container{
-    padding: 1.7em 10px;
-  }
-
-  .button-one{
-    margin-top: 15%;
-  }
-
-  .w3-btn, .w3-btn-block{
-    padding:12px 16px;
-  }
-
-  footer{
-    height:74.29px;
-  }
-
-  </style>
+  <script src="main.js"></script>
 
 </head>
 
 <body style="max-width:600px">
 
-  <nav class="w3-sidenav w3-card-2 w3-white" id="mySidenav" style="width:35%; height:200px; display:none;">
+  <nav class="w3-sidenav w3-card-2 w3-white" id="mySidenav" style="display:none;">
     <div class="w3-container w3-theme-d2">
       <span onclick="w3_close()" class="w3-closenav w3-right w3-xlarge">X</span>
       <br>
@@ -60,15 +41,25 @@
       <div class="w3-right">
         <i class="fa fa-volume-up"></i>
         <i class="fa fa-wifi"></i>
-        <i class="fa fa-battery-2"></i>
+        <i id="chargedbattery" class="fa"></i>
         19:00
       </div>
     </div>
 
-    <h1>
-      Job Radar App
-      <i class="w3-opennav fa fa-bars" onclick="w3_open()"></i>
-    </h1>
+    <div class="w3-col s8">
+      <h1>
+
+        Job Radar App
+
+      </h1>
+    </div>
+
+    <div class="w3-col s4">
+
+      <i class="w3-opennav fa fa-bars fa-2x pull-right" onclick="w3_open()"></i>
+
+    </div>
+
   </header>
 
   <div class="w3-container" onclick="w3_close()">
@@ -77,68 +68,85 @@
       <div class="w3-col s3">
 
       </div>
-      <div class="w3-col l9 w3-container">
 
-        <form action="" class="w3-container w3-card-4 w3-light-grey w3-text-teal w3-margin card-padding">
-          <h2 class="w3-center"></h2>
+      <div action="form.asp" class="w3-card-4 box">
 
-          <div class="w3-row w3-section">
-            <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-briefcase"></i></div>
-            <div class="w3-rest">
-              <input class="w3-input w3-border" name="work" type="text" placeholder="Title Of The Work">
-            </div>
-          </div>
+        <div class="w3-container w3-teal">
 
-          <div class="w3-row w3-section">
-            <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-map-marker"></i></div>
-            <div class="w3-rest">
-              <input class="w3-input w3-border" name="place" type="text" placeholder="Location">
-            </div>
-          </div>
+          <h2>Add a new job</h2>
 
-          <div class="w3-row w3-section">
-            <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-money"></i></div>
-            <div class="w3-rest">
-              <input class="w3-input w3-border" name="price" type="text" placeholder="Payout">
-            </div>
-          </div>
+        </div>
 
-          <div class="w3-row w3-section">
-            <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-phone"></i></div>
-            <div class="w3-rest">
-              <input class="w3-input w3-border" name="phone" type="text" placeholder="Phone">
-            </div>
-          </div>
+        <form class="w3-container" action="">
 
-          <div class="w3-row w3-section">
-            <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-pencil"></i></div>
-            <div class="w3-rest">
-              <input class="w3-input w3-border" name="details" type="text" placeholder="Work Description">
-            </div>
-          </div>
+          <p>
 
-          <button class="w3-btn-block w3-section w3-teal w3-ripple w3-padding">Submit Work</button>
+            <label class="w3-label w3-text-black"><b>Title</b></label>
+
+            <input class="w3-input w3-border w3-sand" name="first" type="text" required>
+
+          </p>
+
+          <p>
+
+            <label class="w3-label w3-text-black"><b>Location</b></label>
+
+            <input class="w3-input w3-border w3-sand" name="last" type="text" required>
+
+          </p>
+
+          <p>
+
+            <label class="w3-label w3-text-black"><b>Description</b></label>
+
+            <textarea class="w3-input w3-border w3-sand" name="last" type="text" required></textarea>
+
+          </p>
+
+          <p>
+
+            <label class="w3-label w3-text-black"><b>Payment: </b></label>
+
+            <input class="w3-input w3-border w3-sand inputp" type="number" required>
+
+          </p>
+
+            <button class="w3-btn w3-blue button-add">Add Job</button>
 
         </form>
-
       </div>
     </div>
-
   </div>
-
 </div>
 
-<footer class="w3-container w3-theme w3-margin-top">
-
-</footer>
-
 <script>
-function w3_open() {
-  document.getElementById("mySidenav").style.display = "block";
+// Handles the battery animation.
+
+function chargebattery() {
+
+var a;
+
+a = document.getElementById("chargedbattery");
+
+a.innerHTML = "&#xf244;";
+
+setTimeout(function () {
+    a.innerHTML = "&#xf243;";
+  }, 1000);
+setTimeout(function () {
+    a.innerHTML = "&#xf242;";
+  }, 2000);
+setTimeout(function () {
+    a.innerHTML = "&#xf241;";
+  }, 3000);
+setTimeout(function () {
+    a.innerHTML = "&#xf240;";
+  }, 4000);
 }
-function w3_close() {
-  document.getElementById("mySidenav").style.display = "none";
-}
+chargebattery();
+setInterval(chargebattery, 5000);
+
 </script>
 
 </body>
+</html>
