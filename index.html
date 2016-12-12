@@ -10,8 +10,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+  <script src="main.js"></script>
   <script src="addwork.js"></script>
-  <script src="sidenav.js"></script>
+
 </head>
 
 <body style="max-width:600px">
@@ -172,10 +173,16 @@
   </div>
 
   <script>
-function chargebattery() {
+  // Handles the battery animation.
+
+  function chargebattery() {
+
   var a;
+
   a = document.getElementById("chargedbattery");
+
   a.innerHTML = "&#xf244;";
+
   setTimeout(function () {
       a.innerHTML = "&#xf243;";
     }, 1000);
@@ -188,25 +195,11 @@ function chargebattery() {
   setTimeout(function () {
       a.innerHTML = "&#xf240;";
     }, 4000);
-}
-chargebattery();
-setInterval(chargebattery, 5000);
-</script>
+  }
+  chargebattery();
+  setInterval(chargebattery, 5000);
 
-<script>
-
-$(document).ready(function(){
-
-  var $mySidenav=$("#mySidenav"),
-
-      $navAnimation=$(".navAnimation");
-
-  $mySidenav.click(function(){
-
-    $navAnimation.fadeToggle();
-  });
-});
-
-</script>
+  </script>
 
 </body>
+</html>

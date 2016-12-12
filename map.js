@@ -1,3 +1,15 @@
+function myMap() {
+
+  var mapCanvas = document.getElementById("map");
+
+  var mapOptions = {
+    center: new google.maps.LatLng(65.011003, 25.469006), zoom: 15
+  };
+
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+
+}
+
 $(document).ready(function(){ $( "#map_canvas" ).hide();
 function mapDisplay() {
 

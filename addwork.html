@@ -11,12 +11,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
   <script src="addwork.js"></script>
+  <script src="main.js"></script>
 
 </head>
 
 <body style="max-width:600px">
 
-  <nav class="w3-sidenav w3-card-2 w3-white" id="mySidenav" style="width:35%; height:200px; display:none;">
+  <nav class="w3-sidenav w3-card-2 w3-white" id="mySidenav" style="display:none;">
     <div class="w3-container w3-theme-d2">
       <span onclick="w3_close()" class="w3-closenav w3-right w3-xlarge">X</span>
       <br>
@@ -40,7 +41,7 @@
       <div class="w3-right">
         <i class="fa fa-volume-up"></i>
         <i class="fa fa-wifi"></i>
-        <i class="fa fa-battery-2"></i>
+        <i id="chargedbattery" class="fa"></i>
         19:00
       </div>
     </div>
@@ -119,15 +120,32 @@
 </div>
 
 <script>
-function w3_open() {
+// Handles the battery animation.
 
-  document.getElementById("mySidenav").style.display = "block";
-  document.getElementById("mySidenav").style.right = "0";
-}
-function w3_close() {
+function chargebattery() {
 
-  document.getElementById("mySidenav").style.display = "none";
+var a;
+
+a = document.getElementById("chargedbattery");
+
+a.innerHTML = "&#xf244;";
+
+setTimeout(function () {
+    a.innerHTML = "&#xf243;";
+  }, 1000);
+setTimeout(function () {
+    a.innerHTML = "&#xf242;";
+  }, 2000);
+setTimeout(function () {
+    a.innerHTML = "&#xf241;";
+  }, 3000);
+setTimeout(function () {
+    a.innerHTML = "&#xf240;";
+  }, 4000);
 }
+chargebattery();
+setInterval(chargebattery, 5000);
+
 </script>
 
 </body>
