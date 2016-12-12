@@ -6,22 +6,17 @@
   <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
   <link rel="stylesheet" href="http://www.w3schools.com/lib/w3-theme-teal.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="Main.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
-  <script src=""></script>
-
-  <script>
-
-
-
-  </script>
+  <script src="addwork.js"></script>
 
   <style>
 
-.w3-container{
-  padding: 1.7em 10px;
-}
+  .w3-container{
+    padding: 1.7em 10px;
+  }
 
   .button-one{
     margin-top: 15%;
@@ -41,12 +36,15 @@
 
 <body style="max-width:600px">
 
-  <nav class="w3-sidenav w3-card-2 w3-white" id="mySidenav" style="width:35%; height:100px; display:none;">
+  <nav class="w3-sidenav w3-card-2 w3-white" id="mySidenav" style="width:35%; height:200px; display:none;">
     <div class="w3-container w3-theme-d2">
       <span onclick="w3_close()" class="w3-closenav w3-right w3-xlarge">X</span>
       <br>
       <div class="w3-padding w3-center">
-        <img class="w3-circle" src="" alt="avatar" style="width:75%">
+
+        <!-- <img class="w3-circle" src="" alt="avatar" style="width:75%"> -->
+        <i class="w3-opennav fa fa-user-circle fa-3x"></i>
+
       </div>
     </div>
     <br>
@@ -57,6 +55,16 @@
   </nav>
 
   <header class="w3-container w3-card-4 w3-theme">
+
+    <div>
+      <div class="w3-right">
+        <i class="fa fa-volume-up"></i>
+        <i class="fa fa-wifi"></i>
+        <i class="fa fa-battery-2"></i>
+        19:00
+      </div>
+    </div>
+
     <h1>
       Job Radar App
       <i class="w3-opennav fa fa-bars" onclick="w3_open()"></i>
@@ -72,26 +80,26 @@
       <div class="w3-col l9 w3-container">
 
         <form action="" class="w3-container w3-card-4 w3-light-grey w3-text-teal w3-margin card-padding">
-          <h2 class="w3-center">Contact Us</h2>
+          <h2 class="w3-center"></h2>
 
           <div class="w3-row w3-section">
             <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-briefcase"></i></div>
             <div class="w3-rest">
-              <input class="w3-input w3-border" name="work" type="text" placeholder="Name Of The Work">
+              <input class="w3-input w3-border" name="work" type="text" placeholder="Title Of The Work">
             </div>
           </div>
 
           <div class="w3-row w3-section">
             <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-map-marker"></i></div>
             <div class="w3-rest">
-              <input class="w3-input w3-border" name="place" type="text" placeholder="Name Of The Place">
+              <input class="w3-input w3-border" name="place" type="text" placeholder="Location">
             </div>
           </div>
 
           <div class="w3-row w3-section">
             <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-money"></i></div>
             <div class="w3-rest">
-              <input class="w3-input w3-border" name="price" type="text" placeholder="Price">
+              <input class="w3-input w3-border" name="price" type="text" placeholder="Payout">
             </div>
           </div>
 
