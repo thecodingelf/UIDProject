@@ -12,6 +12,7 @@
   <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
   <script src="app.js"></script>
   <script src="controllers.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC44J3RMPsuu5U-6X7uHrw3MYRg2CyGFgU"></script>
 
 </head>
 
@@ -60,10 +61,20 @@
       </div>
     </div>
 
-    <h1>
-      Job Radar App
-      <i class="w3-opennav fa fa-bars" onclick="w3_open()"></i>
-    </h1>
+    <div class="w3-col s8">
+      <h1>
+
+        Job Radar App
+
+      </h1>
+    </div>
+
+    <div class="w3-col s4">
+
+      <i class="w3-opennav fa fa-bars fa-2x pull-right" onclick="w3_open()"></i>
+
+    </div>
+
   </header>
 
   <div class="w3-container" onclick="w3_close()">
@@ -134,15 +145,13 @@
 
     <!-- Main Screen Area -->
 
-
-
     <div class="w3-row">
 
       <div class="w3-card-2 box" style="width:100%" ng-controller="WorkController as job">
 
         <header class="w3-container w3-light-grey">
 
-          <h3>{{job.product.name}}</h3>
+          <h3>{{job.product.title}}</h3>
 
         </header>
 
@@ -154,26 +163,59 @@
 
         </div>
 
-      </div>
-      <button onClick="myMap()" class="w3-btn-block w3-teal">Map +</button>
 
-<div id="map" style="width:100%;height:200px;"></div>
+
+        <button onClick="myMap()" class="w3-card-2 w3-btn-block w3-light-grey">Location +</button>
+
+        <div class="w3-accordion w3-light-grey">
+
+          <button onclick="myFunction('details')" class="w3-card-2 w3-btn-block w3-light-grey">Contact Details</button>
+
+          <div id="details" class="w3-accordion-content w3-container">
+
+            <h5>Name: {{job.product.name}}</h5>
+
+            <p>Phone Number: 0461134567</p>
+          </div>
+        </div>
+
+        <!-- Map is displayed here after button is toggled. -->
+
+        <div id="map" style="width:100%;height:200px;"></div>
+      </div>
+
 
     </div>
 
   </div>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC44J3RMPsuu5U-6X7uHrw3MYRg2CyGFgU&callback=myMap"></script>
+  <script>
+  function myFunction(id) {
+
+    var x = document.getElementById(id);
+
+    if (x.className.indexOf("w3-show") == -1) {
+
+      x.className += " w3-show";
+    }
+    else {
+
+      x.className = x.className.replace(" w3-show", "");
+    }
+  }
+  </script>
 
   <script>
-function myMap() {
-  var mapCanvas = document.getElementById("map");
-  var mapOptions = {
-    center: new google.maps.LatLng(65.011003, 25.469006), zoom: 15
-  };
-  var map = new google.maps.Map(mapCanvas, mapOptions);
-}
-</script>
+  function myMap() {
+    var mapCanvas = document.getElementById("map");
+    var mapOptions = {
+      center: new google.maps.LatLng(65.011003, 25.469006), zoom: 15
+    };
+    var map = new google.maps.Map(mapCanvas, mapOptions);
+
+
+  }
+  </script>
 
   <script>
   function w3_open() {

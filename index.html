@@ -11,24 +11,18 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
   <script src="addwork.js"></script>
-  <script>
-
-  </script>
-
 </head>
 
 <body style="max-width:600px">
 
-
   <nav class="w3-sidenav w3-card-2 w3-white" id="mySidenav" style="display:none;">
-  
     <div class="w3-container w3-theme-d2">
       <span onclick="w3_close()" class="w3-closenav w3-right w3-xlarge">X</span>
       <br>
       <div class="w3-padding w3-center">
 
-        <!-- <img class="w3-circle" src="pic.jpg" alt="avatar" style="width:85%"> -->
-        <i class="w3-opennav barmenu fa fa-user-circle fa-4x"></i>
+        <!-- <img class="w3-circle" src="" alt="avatar" style="width:75%"> -->
+        <i class="w3-opennav fa fa-user-circle fa-3x"></i>
 
       </div>
     </div>
@@ -47,20 +41,28 @@
       <div class="w3-right">
         <i class="fa fa-volume-up"></i>
         <i class="fa fa-wifi"></i>
-        <i class="fa fa-battery-3"></i>
+        <i id="chargedbattery" class="fa"></i>
         19:00
       </div>
     </div>
 
-    <h1>
-      Job Radar App
-      <i class="w3-opennav w3-margin-left fa fa-bars" onclick="w3_open()"></i>
+    <div class="w3-col s8">
+      <h1>
 
-    </h1>
+        Job Radar App
+
+      </h1>
+    </div>
+
+    <div class="w3-col s4">
+
+        <i class="w3-opennav fa fa-bars fa-2x pull-right" onclick="w3_open()"></i>
+
+    </div>
 
   </header>
 
-  <div class="w3-container" onclick="w3_close()">
+  <div class="w3-container box" onclick="w3_close()">
 
     <!-- Log in in form. -->
 
@@ -152,35 +154,64 @@
 
       </div>
     </div>
-    <hr>
+
     <div id="third" class="w3-row">
       <div class="w3-col s3">
 
       </div>
-      <div class="w3-col l9 w3-container">
+      <!-- <div class="w3-col l9 w3-container">
 
         <button class="w3-btn-block w3-teal">Maps</button>
 
-      </div>
+      </div> -->
 
 
     </div>
-    <hr>
+
   </div>
 
-  <!-- Footer section -->
+  <script>
+function chargebattery() {
+  var a;
+  a = document.getElementById("chargedbattery");
+  a.innerHTML = "&#xf244;";
+  setTimeout(function () {
+      a.innerHTML = "&#xf243;";
+    }, 1000);
+  setTimeout(function () {
+      a.innerHTML = "&#xf242;";
+    }, 2000);
+  setTimeout(function () {
+      a.innerHTML = "&#xf241;";
+    }, 3000);
+  setTimeout(function () {
+      a.innerHTML = "&#xf240;";
+    }, 4000);
+}
+chargebattery();
+setInterval(chargebattery, 5000);
+</script>
 
-  <footer class="w3-container w3-theme w3-margin-top">
+<script>
 
-  </footer>
+$(document).ready(function(){
+
+  var $mySidenav=$("#mySidenav"),
+
+      $navAnimation=$(".navAnimation");
+
+  $mySidenav.click(function(){
+
+    $navAnimation.fadeToggle();
+  });
+});
+
+</script>
 
   <script>
   function w3_open() {
-    
     document.getElementById("mySidenav").style.display = "block";
-
     document.getElementById("mySidenav").style.right = "0";
-
   }
   function w3_close() {
     document.getElementById("mySidenav").style.display = "none";
