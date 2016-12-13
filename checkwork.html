@@ -192,7 +192,8 @@
             var $fullsize = $('#fullsize'),
                 $smallsize = $('#smallsize'),
                 $map = $('#map'),
-                $mapBtn=$("#mapBtn");
+                $mapBtn=$("#mapBtn"),
+                $heightOfMap = $map.height();
               $mapBtn.click(function() {
                 $fullsize.show('fast');
               });
@@ -229,6 +230,7 @@
                 zoom: 15
             };
             var map = new google.maps.Map(mapCanvas, mapOptions);
+            
         }
     </script>
 
