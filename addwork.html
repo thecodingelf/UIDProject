@@ -10,7 +10,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
-  <script src="addwork.js"></script>
   <script src="main.js"></script>
 
 </head>
@@ -41,7 +40,9 @@
             <div class="w3-right">
                 <i class="fa fa-volume-up"></i>
                 <i class="fa fa-wifi"></i>
-                <i class="fa fa-battery-2"></i> 19:00
+
+                <i id="chargedbattery" class="fa"></i> 19:00
+
             </div>
         </div>
 
@@ -124,7 +125,6 @@
       </div>
     </div>
   </div>
-</div>
 
 <script>
 // Handles the battery animation.
