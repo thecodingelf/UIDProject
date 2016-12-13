@@ -12,27 +12,33 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+
     <script src="main.js"></script>
+
     <script src="app.js"></script>
     <script src="controllers.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC44J3RMPsuu5U-6X7uHrw3MYRg2CyGFgU"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <style>
+
          .main{
                 transition: all 0.5s ease-in-out;
             }
-            .main-body {
 
+            .main-body {
+               
                 padding-top: 0px;
-                padding-bottom: 0px;
+                padding-bottom: 0px;                             
                 overflow: hidden;
-                height: 0px;
+                height: 0px;                                
+
                 transition: all 0.25s ease-in-out;
             }
 
-            .main.active .main-body {
+            .main.active.main-body {
                 height: 100px;
+
                 padding-bottom: 10px;
             }
 
@@ -42,6 +48,21 @@
             }
 
 
+                padding-bottom: 10px;                               
+            }
+
+
+
+</style>
+<style>
+
+    .w3-containerstyle {
+        padding: 1.7em 10px;
+    }
+
+    .paymentbox {
+        background-color: #f1f1f1!important;
+    }
 </style>
 <style>
 
@@ -82,7 +103,9 @@
             <div class="w3-right">
                 <i class="fa fa-volume-up"></i>
                 <i class="fa fa-wifi"></i>
+
                 <i id="chargedbattery" class="fa"></i> 19:00
+
             </div>
         </div>
 
@@ -132,7 +155,6 @@
                     <span class="w3-right w3-padding w3-hide-small">Forgot <a href="#">password?</a></span>
 
                 </div>
-
             </div>
         </div>
 
@@ -201,14 +223,13 @@
 
                         <h5>Name: {{job.product.name}}
                         <p>Phone Number: 0461134567</p></h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                      
+                    </div></div>
+                </div></div>
 
                 <!-- Map is displayed here after button is toggled. -->
                 <button id="mapBtn"onClick="myMap()" class="w3-card-2 w3-btn-block w3-light-grey">Location +</button>
-
+                
                 <div id="map" style="width:100%;height:200px; display:none;"></div>
 
 
@@ -222,8 +243,9 @@
             $(document).ready(function() {
                 $(".main").click(function() {
                     $(this).toggleClass("active");
-                });
-            });
+                });    
+            });            
+
         </script>
 
 
@@ -234,11 +256,11 @@
                 $map=$('#map');
 
               $mapBtn.click(function() {
-
+                
                 $map.toggle();
-
-              google.maps.event.trigger(map, 'resize');
-
+                
+              google.maps.event.trigger(map, 'resize'); 
+      
         });
           });
     </script>
@@ -262,11 +284,11 @@
                 zoom: 15
             };
             var map = new google.maps.Map(mapCanvas, mapOptions);
-
         }
     </script>
 
     <script>
+
     // Handles the battery animation.
 
     function chargebattery() {
