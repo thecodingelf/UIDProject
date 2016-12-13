@@ -10,32 +10,56 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
-  <script src="main.js"></script>
   <script src="addwork.js"></script>
+  <script>
+
+  </script>
 
 </head>
+<style >
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+     background-color: #8181;
+    overflow-x: hidden;
+    transition: all 0.5s;
+    padding-top: 60px;
+}
 
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+</style>
 <body style="max-width:600px">
 
-  <nav class="w3-sidenav w3-card-2 w3-white" id="mySidenav" style="display:none;">
-    <div class="w3-container w3-theme-d2">
-      <span onclick="w3_close()" class="w3-closenav w3-right w3-xlarge">&times</span>
+<div class="sidenav">
+  <nav class="w3-sidenav  " id="mySidenav" style="display:none;">
+  
+    <div class="w3-container w3-theme-d2 sidenav">
+      
       <br>
-      <div class="w3-padding w3-center">
+    <div class="w3-padding w3-center">
 
-        <!-- <img class="w3-circle" src="" alt="avatar" style="width:75%"> -->
-        <i class="w3-opennav fa fa-user-circle fa-3x"></i>
+        <!-- <img class="w3-circle" src="pic.jpg" alt="avatar" style="width:85%"> -->
+        <i class="w3-opennav barmenu fa fa-user-circle fa-4x"></i>
 
       </div>
     </div>
     <br>
     <!-- <a class="w3-center" href="#">Profile</a> -->
     <!-- <hr> -->
+    <span onclick="w3_close()" class="w3-closenav w3-right w3-xlarge">&times</span><br>
     <a onclick="document.getElementById('id01').style.display='block'" class="w3-center" >Log In</a>
     <hr>
     <a onclick="document.getElementById('id02').style.display='block'" class="w3-center" >Sign Up</a>
     <hr>
-  </nav>
+  </nav></div>
 
   <header class="w3-container w3-card-4 w3-theme">
 
@@ -43,28 +67,20 @@
       <div class="w3-right">
         <i class="fa fa-volume-up"></i>
         <i class="fa fa-wifi"></i>
-        <i id="chargedbattery" class="fa"></i>
+        <i class="fa fa-battery-3"></i>
         19:00
       </div>
     </div>
 
-    <div class="w3-col s8">
-      <h1>
+    <h1>
+      Job Radar App
+      <i class="w3-opennav w3-margin-left fa fa-bars" onclick="w3_open()"></i>
 
-        Job Radar App
-
-      </h1>
-    </div>
-
-    <div class="w3-col s4">
-
-        <i class="w3-opennav fa fa-bars fa-2x pull-right" onclick="w3_open()"></i>
-
-    </div>
+    </h1>
 
   </header>
 
-  <div class="w3-container box" onclick="w3_close()">
+  <div class="w3-container" onclick="w3_close()">
 
     <!-- Log in in form. -->
 
@@ -152,54 +168,44 @@
       </div>
       <div class="w3-col l9 w3-container">
 
-        <button onclick="location.href='checkwork.html';" class="btn btn-block w3-teal">Check Work</button>
+        <button onclick="location.href='checkwork.html';" class="w3-btn-block w3-teal button-one">Check Work</button>
 
       </div>
     </div>
-
+    <hr>
     <div id="third" class="w3-row">
       <div class="w3-col s3">
 
       </div>
-      <!-- <div class="w3-col l9 w3-container">
+      <div class="w3-col l9 w3-container">
 
         <button class="w3-btn-block w3-teal">Maps</button>
 
-      </div> -->
+      </div>
 
 
     </div>
-
+    <hr>
   </div>
 
+  <!-- Footer section -->
+
+  <footer class="w3-container w3-theme w3-margin-top">
+
+  </footer>
+
   <script>
-  // Handles the battery animation.
+  function w3_open() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("mySidenav").style.display = "block";
 
-  function chargebattery() {
+    document.getElementById("mySidenav").style.right = "0";
 
-  var a;
-
-  a = document.getElementById("chargedbattery");
-
-  a.innerHTML = "&#xf244;";
-
-  setTimeout(function () {
-      a.innerHTML = "&#xf243;";
-    }, 1000);
-  setTimeout(function () {
-      a.innerHTML = "&#xf242;";
-    }, 2000);
-  setTimeout(function () {
-      a.innerHTML = "&#xf241;";
-    }, 3000);
-  setTimeout(function () {
-      a.innerHTML = "&#xf240;";
-    }, 4000);
   }
-  chargebattery();
-  setInterval(chargebattery, 5000);
-
+  function w3_close() {
+    document.getElementById("mySidenav").style.display = "none";
+    document.getElementById("mySidenav").style.width = "0";
+  }
   </script>
 
 </body>
-</html>
