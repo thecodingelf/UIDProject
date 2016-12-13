@@ -177,8 +177,8 @@
                 </div>
 
                 <!-- Map is displayed here after button is toggled. -->
-                <button onClick="myMap()" class="w3-card-2 w3-btn-block w3-light-grey">Location +</button>
-                <button id="fullsize" ><span class="glyphicon glyphicon-resize-full"></span></button>
+                <button id="mapBtn"onClick="myMap()" class="w3-card-2 w3-btn-block w3-light-grey">Location +</button>
+                <button id="fullsize" style="display:none;"><span class="glyphicon glyphicon-resize-full"></span></button>
                 <button id="smallsize" style="display:none;"><span class="glyphicon glyphicon-resize-small" ></span></button>
                 <div id="map" style="width:100%;height:200px;"></div>
             </div>
@@ -192,7 +192,10 @@
             var $fullsize = $('#fullsize'),
                 $smallsize = $('#smallsize'),
                 $map = $('#map'),
-                $heightOfMap = $map.height();
+                $mapBtn=$("#mapBtn");
+              $mapBtn.click(function() {
+                $fullsize.show('fast');
+              });
                 $fullsize.click(function() {
                     $fullsize.hide('fast');
                     $smallsize.show('fast');
@@ -243,4 +246,6 @@
 </body>
 
 </html>
+
+
 
