@@ -10,14 +10,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
-  <script src="addwork.js"></script>
   <script src="main.js"></script>
 
 </head>
 
 <body style="max-width:600px">
 
-  <nav class="w3-sidenav w3-card-2 w3-white" id="mySidenav" style="display:none;">
+  <nav class="w3-sidenav w3-card-2 w3-white w3-animate-right" id="mySidenav" style="display:none;">
     <div class="w3-container w3-theme-d2">
       <span onclick="w3_close()" class="w3-closenav w3-right w3-xlarge">X</span>
       <br>
@@ -37,32 +36,31 @@
 
   <header class="w3-container w3-card-4 w3-theme">
 
-    <div>
-      <div class="w3-right">
-        <i class="fa fa-volume-up"></i>
-        <i class="fa fa-wifi"></i>
-        <i id="chargedbattery" class="fa"></i>
-        19:00
-      </div>
-    </div>
+        <div>
+            <div class="w3-right">
+                <i class="fa fa-volume-up"></i>
+                <i class="fa fa-wifi"></i>
+                <i id="chargedbattery" class="fa"></i> 19:00
+            </div>
+        </div>
 
-    <div class="w3-col s8">
-      <h1>
+        <div class="w3-col s8 w3-animate-left">
+      <a href = "index.html" style="text-decoration : none;">      <h1 style ="color : white;">
 
         Job Radar App
 
-      </h1>
-    </div>
+      </h1></a>
+        </div>
 
-    <div class="w3-col s4">
+        <div class="w3-col s4">
 
-      <i class="w3-opennav fa fa-bars fa-2x pull-right" onclick="w3_open()"></i>
+            <i class="w3-opennav fa fa-bars fa-2x pull-right  w3-animate-top" onclick="w3_open()"></i>
 
-    </div>
+        </div>
 
-  </header>
+    </header>
 
-  <div class="w3-container" onclick="w3_close()">
+  <div class="w3-container w3-animate-right" onclick="w3_close()">
 
     <div class="w3-row">
       <div class="w3-col s3">
@@ -86,6 +84,14 @@
             <input class="w3-input w3-border w3-sand" name="first" type="text" required>
 
           </p>
+           <p>
+
+            <label class="w3-label w3-text-black"><b>Employer</b></label>
+
+            <input class="w3-input w3-border w3-sand" name="first" type="text" required>
+
+          </p>
+
 
           <p>
 

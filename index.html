@@ -11,13 +11,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
   <script src="main.js"></script>
-  <script src="addwork.js"></script>
 
 </head>
 
 <body style="max-width:600px">
 
-  <nav class="w3-sidenav w3-card-2 w3-white" id="mySidenav" style="display:none;">
+  <nav class="w3-sidenav w3-card-2 w3-white w3-animate-right" id="mySidenav" style="display:none;">
     <div class="w3-container w3-theme-d2">
       <span onclick="w3_close()" class="w3-closenav w3-right w3-xlarge">X</span>
       <br>
@@ -33,7 +32,7 @@
     <!-- <hr> -->
     <a onclick="document.getElementById('id01').style.display='block'" class="w3-center" >Log In</a>
     <hr>
-    <a onclick="document.getElementById('id02').style.display='block'" class="w3-center" >Sign In</a>
+    <a onclick="document.getElementById('id02').style.display='block'" class="w3-center" >Sign Up</a>
     <hr>
   </nav>
 
@@ -48,7 +47,7 @@
       </div>
     </div>
 
-    <div class="w3-col s8">
+    <div class="w3-col s8 w3-animate-left">
       <h1>
 
         Job Radar App
@@ -58,7 +57,7 @@
 
     <div class="w3-col s4">
 
-        <i class="w3-opennav fa fa-bars fa-2x pull-right" onclick="w3_open()"></i>
+        <i class="w3-opennav fa fa-bars fa-2x pull-right w3-animate-top" onclick="w3_open()"></i>
 
     </div>
 
@@ -132,7 +131,7 @@
 
     <!-- Main Screen Area -->
 
-    <div class="w3-row">
+    <div class="w3-row w3-animate-right" style = "padding-top: 150px;">
       <div class="w3-col s3">
 
       </div>
@@ -147,7 +146,7 @@
     </div>
     <hr>
 
-    <div id="box_second" class="w3-row">
+    <div id="box_second" class="w3-row w3-animate-right">
       <div class="w3-col s3">
       </div>
       <div class="w3-col l9 w3-container">
