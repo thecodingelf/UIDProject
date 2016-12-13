@@ -178,12 +178,10 @@
 
                 <!-- Map is displayed here after button is toggled. -->
                 <button id="mapBtn"onClick="myMap()" class="w3-card-2 w3-btn-block w3-light-grey">Location +</button>
-                <div id="allContainer">
-                <button id="fullsize" style="display:none;"><span class="glyphicon glyphicon-resize-full"></span></button>
-                <button id="smallsize" style="display:none;"><span class="glyphicon glyphicon-resize-small" ></span></button>
-                <div id="map" style="width:100%;height:200px;"></div>
+                
+                <div id="map" style="width:100%;height:200px; display:none;"></div>
 
-            </div>
+            
           </div>
 
 
@@ -193,29 +191,17 @@
     <script>
   
         $(document).ready(function() {
-            var $fullsize = $('#fullsize'),
-                $smallsize = $('#smallsize'),
-                $map = $('#map'),
-                $mapBtn=$("#mapBtn"),
-                $allContainer=$('#allContainer'),
-                $heightOfMap = $map.height();
-              $mapBtn.click(function() {
-                $fullsize.show('fast');
-                $allContainer.toggle();
-                
-              });
-                $fullsize.click(function() {
-                    $fullsize.hide('fast');
-                    $smallsize.show('fast');
-                    $map.css('height', '100%');
-                });
-            $smallsize.click(function() {
-                $smallsize.hide('fast');
-                $fullsize.show('fast');
-                $map.css('height', '200px');
-            });
+            var  $mapBtn=$("#mapBtn"),
+                $map=$('#map');
 
+              $mapBtn.click(function() {
+                
+                $map.toggle();
+                
+              google.maps.event.trigger(map, 'resize'); 
+      
         });
+          });
     </script>
 
     <script>
@@ -255,6 +241,7 @@
 </body>
 
 </html>
+
 
 
 
