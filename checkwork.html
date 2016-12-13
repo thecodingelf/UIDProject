@@ -29,7 +29,7 @@
 
 <body style="max-width:600px" ng-app="workList">
 
-    <nav class="w3-sidenav w3-card-2 w3-white w3-animate-right" id="mySidenav" style="display:none;">
+    <nav class="w3-sidenav w3-card-2 w3-white" id="mySidenav" style="display:none;">
         <div class="w3-container w3-theme-d2">
             <span onclick="w3_close()" class="w3-closenav w3-right w3-xlarge">X</span>
             <br>
@@ -59,23 +59,23 @@
             </div>
         </div>
 
-        <div class="w3-col s8 w3-animate-left">
-      <a href = "index.html">      <h1 style ="color : white;">
+        <div class="w3-col s8">
+            <h1>
 
         Job Radar App
 
-      </h1></a>
+      </h1>
         </div>
 
         <div class="w3-col s4">
 
-            <i class="w3-opennav fa fa-bars fa-2x pull-right w3-animate-top" onclick="w3_open()"></i>
+            <i class="w3-opennav fa fa-bars fa-2x pull-right" onclick="w3_open()"></i>
 
         </div>
 
     </header>
 
-    <div class="w3-container w3-animate-right" onclick="w3_close()">
+    <div class="w3-container" onclick="w3_close()">
 
         <!-- Log in in form. -->
 
@@ -178,24 +178,31 @@
 
                 <!-- Map is displayed here after button is toggled. -->
                 <button id="mapBtn"onClick="myMap()" class="w3-card-2 w3-btn-block w3-light-grey">Location +</button>
+                <div id="allContainer">
                 <button id="fullsize" style="display:none;"><span class="glyphicon glyphicon-resize-full"></span></button>
                 <button id="smallsize" style="display:none;"><span class="glyphicon glyphicon-resize-small" ></span></button>
                 <div id="map" style="width:100%;height:200px;"></div>
+
             </div>
+          </div>
 
 
         </div>
 
     </div>
     <script>
+  
         $(document).ready(function() {
             var $fullsize = $('#fullsize'),
                 $smallsize = $('#smallsize'),
                 $map = $('#map'),
                 $mapBtn=$("#mapBtn"),
+                $allContainer=$('#allContainer'),
                 $heightOfMap = $map.height();
               $mapBtn.click(function() {
                 $fullsize.show('fast');
+                $allContainer.toggle();
+                
               });
                 $fullsize.click(function() {
                     $fullsize.hide('fast');
