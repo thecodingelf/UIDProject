@@ -11,6 +11,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
   <script src="addwork.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
   <script>
 
   </script>
@@ -37,7 +40,7 @@
 }
 </style>
 <body style="max-width:600px">
-
+<div data-role="page" id="index" class="">
 <div class="sidenav">
   <nav class="w3-sidenav  " id="mySidenav" style="display:none;">
   
@@ -154,8 +157,9 @@
       </div>
       <div class="w3-col l9 w3-container">
 
-        <button onclick="location.href='addwork.html';" class="w3-btn-block w3-teal button-one">Add Work</button>
-
+           <div data-role="main" class="">
+      <button class="w3-btn-block w3-teal button-one" ng-click=""><a href="#addwork" data-transition="slide" style="text-decoration: none; color: white;">Add Work</a></button>
+</div>
       </div>
 
       <div ng-include="viewFile()"></div>
@@ -187,13 +191,114 @@
     </div>
     <hr>
   </div>
-
+</div>
   <!-- Footer section -->
 
   <footer class="w3-container w3-theme w3-margin-top">
 
   </footer>
+<div data-role="page" id="addwork">
+  <nav class="w3-sidenav w3-card-2 w3-white" id="mySidenav" style="display:none;">
+    <div class="w3-container w3-theme-d2">
+      <span onclick="w3_close()" class="w3-closenav w3-right w3-xlarge">X</span>
+      <br>
+      <div class="w3-padding w3-center">
 
+        <!-- <img class="w3-circle" src="" alt="avatar" style="width:75%"> -->
+        <i class="w3-opennav fa fa-user-circle fa-3x"></i>
+
+      </div>
+    </div>
+    <br>
+    <a class="w3-center" href="#">Profile</a>
+    <hr>
+    <a class="w3-center" href="#">Log Out</a>
+    <hr>
+  </nav>
+
+  <header class="w3-container w3-card-4 w3-theme">
+
+    <div>
+      <div class="w3-right">
+        <i class="fa fa-volume-up"></i>
+        <i class="fa fa-wifi"></i>
+        <i id="chargedbattery" class="fa"></i>
+        19:00
+      </div>
+    </div>
+
+    <div class="w3-col s8">
+      <h1>
+
+        Job Radar App
+
+      </h1>
+    </div>
+
+    <div class="w3-col s4">
+
+      <i class="w3-opennav fa fa-bars fa-2x pull-right" onclick="w3_open()"></i>
+
+    </div>
+
+  </header>
+
+  <div class="w3-container" onclick="w3_close()">
+
+    <div class="w3-row">
+      <div class="w3-col s3">
+
+      </div>
+
+      <div action="form.asp" class="w3-card-4 box">
+
+        <div class="w3-container w3-teal">
+
+          <h2>Add a new job</h2>
+
+        </div>
+
+        <form class="w3-container" action="">
+
+          <p>
+
+            <label class="w3-label w3-text-black"><b>Title</b></label>
+
+            <input class="w3-input w3-border w3-sand" name="first" type="text" required>
+
+          </p>
+
+          <p>
+
+            <label class="w3-label w3-text-black"><b>Location</b></label>
+
+            <input class="w3-input w3-border w3-sand" name="last" type="text" required>
+
+          </p>
+
+          <p>
+
+            <label class="w3-label w3-text-black"><b>Description</b></label>
+
+            <textarea class="w3-input w3-border w3-sand" name="last" type="text" required></textarea>
+
+          </p>
+
+          <p>
+
+            <label class="w3-label w3-text-black"><b>Payment: </b></label>
+
+            <input class="w3-input w3-border w3-sand inputp" type="number" required>
+
+          </p>
+
+            <button class="w3-btn w3-blue button-add">Add Job</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
   <script>
   function w3_open() {
     document.getElementById("mySidenav").style.width = "250px";
@@ -207,5 +312,35 @@
     document.getElementById("mySidenav").style.width = "0";
   }
   </script>
+
+<script>
+// Handles the battery animation.
+
+function chargebattery() {
+
+var a;
+
+a = document.getElementById("chargedbattery");
+
+a.innerHTML = "&#xf244;";
+
+setTimeout(function () {
+    a.innerHTML = "&#xf243;";
+  }, 1000);
+setTimeout(function () {
+    a.innerHTML = "&#xf242;";
+  }, 2000);
+setTimeout(function () {
+    a.innerHTML = "&#xf241;";
+  }, 3000);
+setTimeout(function () {
+    a.innerHTML = "&#xf240;";
+  }, 4000);
+}
+chargebattery();
+setInterval(chargebattery, 5000);
+
+</script>
+
 
 </body>
