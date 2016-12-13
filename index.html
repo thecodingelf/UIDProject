@@ -15,14 +15,26 @@
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <script src="app.js"></script>
+    <script src="controllers.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC44J3RMPsuu5U-6X7uHrw3MYRg2CyGFgU"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 </head>
+<style>
+    .w3-containerstyle {
+        padding: 1.7em 10px;
+    }
 
-<body style="max-width:600px">
+    .paymentbox {
+        background-color: #f1f1f1!important;
+    }
+</style>
+<body style="max-width:600px" >
 <div data-role="page" id="index" class="">
   <nav class="w3-sidenav w3-card-2 w3-white w3-animate-right" id="mySidenav" style="display:none;">
     <div class="w3-container w3-theme-d2">
-      <span onclick="w3_close()" class="w3-closenav w3-right w3-xlarge">X</span>
+      <span onclick="w3_close()" class="w3-closenav w3-right w3-xlarge">&times</span>
       <br>
       <div class="w3-padding w3-center">
 
@@ -36,7 +48,7 @@
     <!-- <hr> -->
     <a onclick="document.getElementById('id01').style.display='block'" class="w3-center" >Log In</a>
     <hr>
-    <a onclick="document.getElementById('id02').style.display='block'" class="w3-center" >Sign In</a>
+    <a onclick="document.getElementById('id02').style.display='block'" class="w3-center" >Sign Up</a>
     <hr>
   </nav>
 
@@ -142,7 +154,7 @@
       <div class="w3-col l9 w3-container">
 
        <div data-role="main" class="">
-      <button class="w3-btn-block w3-teal button-one" ng-click=""><a href="#addwork" data-transition="slide" style="text-decoration: none; color: white;">Add Work</a></button>
+     <a href="#addwork" data-transition="slide" style="text-decoration: none; color: white;"> <button class="btn btn-block w3-teal">Add Work</button></a>
 </div>
 
       </div>
@@ -156,9 +168,9 @@
       <div class="w3-col s3">
       </div>
       <div class="w3-col l9 w3-container">
-
-        <button onclick="location.href='checkwork.html';" class="btn btn-block w3-teal">Check Work</button>
-
+        <div data-role="main">
+        <a href="#checkwork" data-transition="slide" style="text-decoration: none; color: white; "><button class="btn btn-block w3-teal" >Check Work</button></a>
+  </div>
       </div>
     </div>
 
@@ -181,7 +193,7 @@
 <div data-role="page" id="addwork">
 <nav class="w3-sidenav w3-card-2 w3-white w3-animate-right" id="mySidenav" style="display:none;">
     <div class="w3-container w3-theme-d2">
-      <span onclick="w3_close()" class="w3-closenav w3-right w3-xlarge">X</span>
+      <span onclick="w3_close()" class="w3-closenav w3-right w3-xlarge">&times</span>
       <br>
       <div class="w3-padding w3-center">
 
@@ -208,7 +220,7 @@
         </div>
 
         <div class="w3-col s8 w3-animate-left">
-      <a href = "index.html">      <h1 style ="color : white;">
+      <a href = "index.html" style="text-decoration:none;">      <h1 style ="color : white;">
 
         Job Radar App
 
@@ -280,6 +292,167 @@
   </div>
 </div>
 </div>
+
+<div data-role="page" id="checkwork" ng-app="workList">
+ <nav class="w3-sidenav w3-card-2 w3-white w3-animate-right" id="mySidenav" style="display:none;">
+        <div class="w3-container w3-theme-d2">
+            <span onclick="w3_close()" class="w3-closenav w3-right w3-xlarge">&times</span>
+            <br>
+            <div class="w3-padding w3-center">
+
+                <!-- <img class="w3-circle" src="pic.jpg" alt="avatar" style="width:85%"> -->
+                <i id="barnav" class="w3-opennav fa fa-user-circle fa-4x"></i>
+
+            </div>
+        </div>
+        <br>
+        <!-- <a class="w3-center" href="#">Profile</a> -->
+        <!-- <hr> -->
+        <a onclick="document.getElementById('id01').style.display='block'" class="w3-center">Log In</a>
+        <hr>
+        <a onclick="document.getElementById('id02').style.display='block'" class="w3-center">Sign In</a>
+        <hr>
+    </nav>
+
+    <header class="w3-container w3-card-4 w3-theme">
+
+        <div>
+            <div class="w3-right">
+                <i class="fa fa-volume-up"></i>
+                <i class="fa fa-wifi"></i>
+                <i class="fa fa-battery-2"></i> 19:00
+            </div>
+        </div>
+
+        <div class="w3-col s8 w3-animate-left">
+      <a href = "index.html" style="text-decoration:none; ">      <h1 style ="color : white;">
+
+        Job Radar App
+
+      </h1></a>
+        </div>
+
+        <div class="w3-col s4">
+
+            <i class="w3-opennav fa fa-bars fa-2x pull-right w3-animate-top" onclick="w3_open()"></i>
+
+        </div>
+
+    </header>
+
+    <div class="w3-container" onclick="w3_close()">
+
+        <!-- Log in in form. -->
+
+        <div id="id01" class="w3-modal">
+            <div class="w3-modal-content w3-card-8 w3-animate-zoom" style="max-width:600px">
+
+                <div class="w3-center"><br>
+                    <span onclick="document.getElementById('id01').style.display='none'" class="w3-closebtn w3-hover-red w3-container w3-padding-8 w3-display-topright" title="Close Modal">×</span>
+                </div>
+
+                <form class="w3-container" action="form.asp">
+
+                    <div class="w3-section">
+                        <label><b>Username</b></label>
+                        <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usrname" required>
+                        <label><b>Password</b></label>
+                        <input class="w3-input w3-border" type="text" placeholder="Enter Password" name="psw" required>
+                        <button class="w3-btn-block w3-green w3-section w3-padding" type="submit">Login</button>
+                        <input class="w3-check w3-margin-top" type="checkbox" checked="checked"> Remember me
+                    </div>
+
+                </form>
+
+                <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+
+                    <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-btn w3-red">Cancel</button>
+                    <span class="w3-right w3-padding w3-hide-small">Forgot <a href="#">password?</a></span>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Sign in form. -->
+
+        <div id="id02" class="w3-modal">
+            <div class="w3-modal-content w3-card-8 w3-animate-zoom" style="max-width:600px">
+
+                <div class="w3-center"><br>
+                    <span onclick="document.getElementById('id02').style.display='none'" class="w3-closebtn w3-hover-red w3-container w3-padding-8 w3-display-topright" title="Close Modal">×</span>
+                </div>
+
+                <form class="w3-container" action="form.asp">
+
+                    <div class="w3-section">
+                        <label><b>Username</b></label>
+                        <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usrname" required>
+                        <label><b>Password</b></label>
+                        <input class="w3-input w3-border" type="text" placeholder="Enter Password" name="psw" required>
+                        <label><b>Email Address</b></label>
+                        <input class="w3-input w3-border" type="text" placeholder="Enter Email" name="Email" required>
+                        <button class="w3-btn-block w3-green w3-section w3-padding" type="submit">Register</button>
+                    </div>
+
+                </form>
+
+                <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+
+                    <button onclick="document.getElementById('id02').style.display='none'" type="button" class="w3-btn w3-red">Cancel</button>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Main Screen Area -->
+
+        <div class="w3-row">
+
+            <div class="w3-card-2 box" style="width:100%" ng-controller="WorkController as job">
+
+                <header class="w3-container w3-light-grey">
+
+                    <h3>{{job.product.title}}</h3>
+
+                </header>
+
+                <div class="w3-container">
+
+                    <p>{{job.product.description}}</p>
+
+                    <h4 class="pull-right">Payment: {{job.product.payout}} €</h4>
+
+                </div>
+
+
+
+
+                <div class="w3-accordion w3-light-grey">
+
+                    <button onclick="myFunction('details')" class="w3-card-2 w3-btn-block w3-light-grey">Contact Details</button>
+
+                    <div id="details" class="w3-accordion-content w3-container">
+
+                        <h5>Name: {{job.product.name}}</h5>
+
+                        <p>Phone Number: 0461134567</p>
+                    </div>
+                </div>
+
+                <!-- Map is displayed here after button is toggled. -->
+                <button id="mapBtn"onClick="myMap()" class="w3-card-2 w3-btn-block w3-light-grey">Location +</button>
+                <button id="fullsize" style="display:none;"><span class="glyphicon glyphicon-resize-full"></span></button>
+                <button id="smallsize" style="display:none;"><span class="glyphicon glyphicon-resize-small" ></span></button>
+                <div id="map" style="width:100%;height:200px;"></div>
+            </div>
+
+
+        </div>
+
+    </div>
+  </div>
   <script>
   // Handles the battery animation.
 
@@ -308,6 +481,54 @@
   setInterval(chargebattery, 5000);
 
   </script>
+
+   <script>
+        $(document).ready(function() {
+            var $fullsize = $('#fullsize'),
+                $smallsize = $('#smallsize'),
+                $map = $('#map'),
+                $mapBtn=$("#mapBtn"),
+                $heightOfMap = $map.height();
+              $mapBtn.click(function() {
+                $fullsize.show('fast');
+              });
+                $fullsize.click(function() {
+                    $fullsize.hide('fast');
+                    $smallsize.show('fast');
+                    $map.css('height', '100%');
+                });
+            $smallsize.click(function() {
+                $smallsize.hide('fast');
+                $fullsize.show('fast');
+                $map.css('height', '200px');
+            });
+
+        });
+    </script>
+
+    <script>
+        function myFunction(id) {
+            var x = document.getElementById(id);
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+    </script>
+
+    <script>
+        function myMap() {
+            var mapCanvas = document.getElementById("map");
+            var mapOptions = {
+                center: new google.maps.LatLng(65.011003, 25.469006),
+                zoom: 15
+            };
+            var map = new google.maps.Map(mapCanvas, mapOptions);
+            
+        }
+    </script>
+
 
 </body>
 </html>
